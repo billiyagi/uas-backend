@@ -1,6 +1,7 @@
 // import express dan router
 const express = require("express");
 const router = require("./routes/api.js");
+const expressValidator = require("express-validator");
 
 // import dotenv dan menjalankan method config
 require("dotenv").config();
@@ -13,6 +14,7 @@ const app = express();
 
 // menggunakan middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // menggunakan routing (router)
 app.use(router);
